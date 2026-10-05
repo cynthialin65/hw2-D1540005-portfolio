@@ -372,32 +372,6 @@ h2 { margin: 0 0 16px; font-size: 28px; color: var(--ink); }
 .kids { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .note { font-size: 14px; border: 1px dashed var(--card-border); border-radius: 10px; padding: 12px 16px; margin-top: 16px; color: var(--muted); background: var(--card-bg); }
 
-/* HW2: My Story */
-.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px; }
-.story-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,0.03); }
-.story-number { font-size:13px; font-weight:800; letter-spacing:.12em; color:var(--accent); text-transform:uppercase; margin-bottom:6px; }
-.story-card h3 { margin:0 0 10px; font-size:22px; }
-.story-text { color:var(--muted); margin:0 0 16px; }
-.story-image-frame { width:100%; height:360px; border-radius:12px; overflow:hidden; background:var(--bg); border:1px solid var(--card-border); display:flex; align-items:center; justify-content:center; }
-.story-image-frame img { width:100%; height:100%; object-fit:contain; display:block; }
-.story-image-note { margin:8px 0 0; color:var(--muted); font-size:12px; text-align:center; }
-
-/* HW2: Ask Me Anything */
-.chat-shell { max-width:900px; margin:24px auto 0; background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.04); }
-.chat-head { padding:18px 20px; background:var(--soft); border-bottom:1px solid var(--card-border); }
-.chat-head h3 { margin:0 0 4px; }
-.chat-head p { margin:0; color:var(--muted); font-size:14px; }
-.chat-messages { height:330px; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:10px; }
-.chat-msg { max-width:82%; padding:10px 14px; border-radius:14px; line-height:1.55; font-size:14px; white-space:pre-wrap; }
-.chat-msg.bot { align-self:flex-start; background:var(--soft); color:var(--ink); border:1px solid var(--card-border); }
-.chat-msg.user { align-self:flex-end; background:var(--accent); color:#fff; }
-.chat-quick { padding:0 18px 12px; display:flex; flex-wrap:wrap; gap:8px; }
-.chat-quick button { padding:7px 11px; border:1px solid var(--card-border); border-radius:999px; background:var(--bg); color:var(--ink); cursor:pointer; font-size:13px; }
-.chat-quick button:hover { border-color:var(--accent); color:var(--accent); }
-.chat-input { display:flex; gap:8px; padding:14px 18px 18px; border-top:1px solid var(--card-border); }
-.chat-input input { flex:1; margin:0; }
-.chat-input button { margin:0; white-space:nowrap; }
-
 /* Form & Footer */
 form label { display: block; font-size: 13px; color: var(--muted); margin-top: 12px; }
 form input, form textarea { width: 100%; padding: 10px; border: 1px solid var(--card-border); border-radius: 8px; background: var(--bg); color: var(--ink); margin-top: 4px; }
@@ -410,16 +384,67 @@ footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size:
   .hero-photo-container { order: -1; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; }
-  .story-grid { grid-template-columns: 1fr; }
   .contact-row { justify-content: center; }
   .pill-container { justify-content: center; }
 }
 @media (max-width: 600px) {
   .features-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
-  .story-image-frame { height: 280px; }
-  .chat-messages { height: 300px; }
 }
+
+/* HW2 Story + Ask Me Anything */
+.story-section { max-width:1200px; margin:0 auto; padding:40px 24px; }
+.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px; }
+.story-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:18px; padding:20px; box-shadow:0 10px 25px rgba(0,0,0,.04); }
+.story-photo-frame {
+  width:100%;
+  height:360px;
+  border-radius:14px;
+  overflow:hidden;
+  background:var(--soft);
+  border:1px solid var(--card-border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 0 18px;
+}
+.story-photo-frame img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.story-number { font-size:13px; color:var(--accent); font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.story-card h3 { margin:6px 0 10px; font-size:22px; }
+.story-card p { color:var(--muted); margin:0; }
+
+.ask-wrap { max-width:1000px; margin:40px auto 0; padding:0 24px; }
+.ask-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:20px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.05); }
+.ask-head { padding:22px 24px; background:var(--soft); border-bottom:1px solid var(--card-border); }
+.ask-head h3 { margin:0 0 4px; font-size:24px; }
+.ask-head p { margin:0; color:var(--muted); }
+.chat-box { height:390px; overflow-y:auto; padding:20px; background:var(--bg); }
+.chat-row { display:flex; margin:0 0 14px; }
+.chat-row.user { justify-content:flex-end; }
+.chat-bubble { max-width:82%; padding:11px 15px; border-radius:16px; line-height:1.6; white-space:pre-line; }
+.chat-row.bot .chat-bubble { background:var(--soft); border:1px solid var(--card-border); color:var(--ink); }
+.chat-row.user .chat-bubble { background:var(--accent); color:#fff; }
+.quick-questions { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 8px; border-top:1px solid var(--card-border); }
+.quick-questions button { border:1px solid var(--card-border); background:var(--card-bg); color:var(--ink); border-radius:999px; padding:8px 13px; cursor:pointer; }
+.quick-questions button:hover { border-color:var(--accent); color:var(--accent); }
+.chat-input { display:flex; gap:10px; padding:14px 20px 20px; }
+.chat-input input { flex:1; min-width:0; padding:12px 14px; border:1px solid var(--card-border); border-radius:10px; background:var(--bg); color:var(--ink); }
+.chat-input button { padding:12px 18px; border:0; border-radius:10px; background:var(--accent); color:#fff; font-weight:700; cursor:pointer; }
+
+@media (max-width:900px){
+  .story-grid { grid-template-columns:1fr; }
+}
+@media (max-width:600px){
+  .story-photo-frame { height:260px; }
+  .chat-box { height:340px; }
+  .chat-bubble { max-width:90%; }
+}
+
 </style>
 </head>
 <body>
@@ -434,11 +459,11 @@ footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size:
     <nav class="nav-links">
       <a href="#top"><span class="zh">首頁</span><span class="en">Home</span></a>
       <a href="#about"><span class="zh">關於我</span><span class="en">About</span></a>
+      <a href="#ask"><span class="zh">AI 問答</span><span class="en">Ask AI</span></a>
+      <a href="#story"><span class="zh">我的故事</span><span class="en">My Story</span></a>
       <a href="#edu"><span class="zh">學經歷</span><span class="en">Education</span></a>
       <a href="#focus"><span class="zh">研究主軸</span><span class="en">Research</span></a>
-      <a href="#story"><span class="zh">我的故事</span><span class="en">My Story</span></a>
       <a href="#research"><span class="zh">專案</span><span class="en">Projects</span></a>
-      <a href="#ask-ai"><span class="zh">問問我</span><span class="en">Ask Me</span></a>
       <a href="#contact"><span class="zh">聯絡我</span><span class="en">Contact</span></a>
     </nav>
     <div class="tools">
@@ -491,6 +516,29 @@ footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size:
   </div>
 </div>
 
+<!-- HW2 Ask Me Anything -->
+<section id="ask" class="ask-wrap">
+  <div class="ask-card">
+    <div class="ask-head">
+      <h3><span class="zh">Ask Cynthia Anything</span><span class="en">Ask Cynthia Anything</span></h3>
+      <p><span class="zh">Cynthia 的 Portfolio AI Assistant：可以問我學經歷、研究、BOM、NPI、成本管理與 AI 應用。</span><span class="en">Cynthia's Portfolio AI Assistant: ask about her background, research, BOM, NPI, cost management, and AI applications.</span></p>
+    </div>
+    <div id="chatBox" class="chat-box"></div>
+    <div class="quick-questions">
+      <button type="button" onclick="askCynthia('你是誰？')">你是誰？</button>
+      <button type="button" onclick="askCynthia('你的研究在做什麼？')">你的研究在做什麼？</button>
+      <button type="button" onclick="askCynthia('為什麼對 BOM 有興趣？')">為什麼對 BOM 有興趣？</button>
+      <button type="button" onclick="askCynthia('什麼是 NPI？')">什麼是 NPI？</button>
+      <button type="button" onclick="askCynthia('AI 如何支援成本管理？')">AI 如何支援成本管理？</button>
+      <button type="button" onclick="askCynthia('你的研究目標是什麼？')">你的研究目標是什麼？</button>
+    </div>
+    <div class="chat-input">
+      <input id="chatInput" type="text" placeholder="輸入你的問題…" onkeydown="if(event.key==='Enter') sendCynthia()">
+      <button type="button" onclick="sendCynthia()">送出</button>
+    </div>
+  </div>
+</section>
+
 <!-- 4 Feature Cards -->
 <div class="features-wrap">
   <div class="features-grid">
@@ -513,7 +561,7 @@ footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size:
       <div class="feature-title"><span class="zh">學經歷</span><span class="en">Education & Experience</span></div>
       <div class="feature-desc">
         <span class="zh">具備十年以上大型企業經驗，結合學術研究與實務工程成本分析。</span>
-        <span class="en">Ph.D. study in Management, with a background in engineering and cost analysis.</span>
+        <span class="en">Master's and Ph.D. studies in Management, with background in engineering and cost analysis.</span>
       </div>
       <div class="feature-link"><span class="zh">檢視細節</span><span class="en">View details</span> →</div>
     </a>
@@ -570,42 +618,6 @@ footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size:
     <div class="quote-box">
       <div class="zh">研究構想是運用 AI 協助建立「工程 BOM＋成本資料＋版本變化＋AI 輔助」的成本核算模型，追蹤產品從設計、NPI 到量產的成本變化。</div>
       <div class="en">My research idea is to use AI to build a cost model combining "engineering BOM + cost data + version changes + AI assistance", tracking how product cost evolves from design and NPI to mass production.</div>
-    </div>
-  </section>
-
-  <!-- HW2: My Story -->
-  <section id="story">
-    <div class="section-label">MY STORY</div>
-    <h2><span class="zh">從工程實務走向 AI</span><span class="en">From Engineering to AI</span></h2>
-    <p class="lead"><span class="zh">我的職涯、研究探索與 AI 協作故事。</span><span class="en">My journey from professional practice to research and AI collaboration.</span></p>
-
-    <div class="story-grid">
-      <article class="story-card">
-        <div class="story-number">Chapter 1</div>
-        <h3><span class="zh">My Beginning｜我的起點</span><span class="en">My Beginning</span></h3>
-        <p class="story-text zh">十多年大型企業實務經驗，是我開始思考工程、BOM、NPI 與成本管理問題的起點。</p>
-        <p class="story-text en">More than ten years of experience in large enterprises became the starting point for my interest in engineering, BOM, NPI, and cost management.</p>
-        <div class="story-image-frame">
-          <img src="photo begin1.jpg" alt="My Beginning - office life and leaving work" loading="lazy">
-        </div>
-        <p class="story-image-note"><span class="zh">Story Image 01</span><span class="en">Story Image 01</span></p>
-      </article>
-
-      <article class="story-card">
-        <div class="story-number">Chapter 2</div>
-        <h3><span class="zh">Why I Started Research｜為什麼開始研究</span><span class="en">Why I Started Research</span></h3>
-        <p class="story-text zh">工作中面對大量工程文件、BOM 與成本資訊，讓我開始思考：是否可以運用 AI，把分散的資訊連結起來？</p>
-        <p class="story-text en">Working with large amounts of engineering documents, BOM information, and cost data led me to ask: Can AI help connect these fragmented sources?</p>
-        <div class="story-image-frame">
-          <img src="photo begin2.jpg" alt="Why I Started Research - documents and work" loading="lazy">
-        </div>
-        <p class="story-image-note"><span class="zh">Story Image 02</span><span class="en">Story Image 02</span></p>
-      </article>
-    </div>
-
-    <div class="quote-box" style="margin-top:24px;">
-      <div class="zh"><b>核心問題：</b>是否可以運用 AI，協助連結工程 BOM 結構與成本資料，並支援 NPI 階段更早、更有效的成本分析與決策？</div>
-      <div class="en"><b>Core question:</b> Can AI help connect engineering BOM structures with cost information and support earlier and more effective cost analysis and decision-making during NPI?</div>
     </div>
   </section>
 
@@ -719,28 +731,50 @@ footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size:
     </div>
   </section>
 
-  <!-- HW2: Ask Me Anything -->
-  <section id="ask-ai">
-    <div class="section-label">ASK ME ANYTHING</div>
-    <h2><span class="zh">Ask Cynthia AI｜問問我的 AI</span><span class="en">Ask Cynthia AI</span></h2>
-    <p class="lead"><span class="zh">這是一個作品集導覽型聊天功能，可回答我的學經歷、研究、BOM、NPI、成本管理與 AI 應用。</span><span class="en">A portfolio chatbot that answers questions about my background, research, BOM, NPI, cost management, and AI applications.</span></p>
-
-    <div class="chat-shell">
-      <div class="chat-head">
-        <h3>Hi, I'm Cynthia's AI Portfolio Assistant.</h3>
-        <p><span class="zh">請選擇問題，或直接輸入你的問題。</span><span class="en">Choose a question or type your own.</span></p>
-      </div>
-      <div class="chat-messages" id="chatMessages"></div>
-      <div class="chat-quick" id="chatQuick"></div>
-      <div class="chat-input">
-        <input id="chatInput" type="text" placeholder="Ask me about Cynthia..." onkeydown="if(event.key==='Enter') sendChat()">
-        <button type="button" onclick="sendChat()"><span class="zh">送出</span><span class="en">Send</span></button>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
-  <section id="contact">
+  
+
+
+<!-- HW2 My Story -->
+<section id="story" class="story-section">
+  <div class="section-label">MY STORY</div>
+  <h2><span class="zh">我的故事</span><span class="en">My Story</span></h2>
+  <p class="zh" style="color:var(--muted);">從企業工程實務出發，逐步走向 AI 與成本決策研究。</p>
+  <p class="en" style="color:var(--muted);">From engineering practice to research on AI-assisted cost management and decision support.</p>
+
+  <div class="story-grid">
+    <article class="story-card">
+      <div class="story-photo-frame">
+        <img src="photo begin1.jpg" alt="My Beginning">
+      </div>
+      <div class="story-number">Chapter 01</div>
+      <h3><span class="zh">我的起點：企業實務</span><span class="en">My Beginning: Engineering Practice</span></h3>
+      <p class="zh">過去十年以上大型企業工作經驗，讓我長期接觸工程結構、BOM、NPI 與成本管理，也看見工程資訊與成本資訊之間存在整合與追蹤的需求。</p>
+      <p class="en">With more than ten years of experience in large enterprises, I have worked with engineering structures, BOM, NPI, and cost management, and observed the need to better connect engineering and cost information.</p>
+    </article>
+
+    <article class="story-card">
+      <div class="story-photo-frame">
+        <img src="photo begin2.jpg" alt="Why I Started Research">
+      </div>
+      <div class="story-number">Chapter 02</div>
+      <h3><span class="zh">為什麼開始研究</span><span class="en">Why I Started Research</span></h3>
+      <p class="zh">我開始思考：是否可以運用 AI，協助連結工程 BOM 結構與成本資料，並支援 NPI 階段更早、更有效的成本分析與決策？</p>
+      <p class="en">I began asking whether AI could connect engineering BOM structures with cost information and support earlier, more effective cost analysis and decision-making during NPI.</p>
+    </article>
+  </div>
+
+  <div class="story-card" style="margin-top:24px;">
+    <div class="story-number">Chapter 03–05</div>
+    <h3><span class="zh">從成本核算走向 AI 輔助決策</span><span class="en">From Cost Calculation to AI-Assisted Decision Support</span></h3>
+    <p class="zh">我的研究探索工程 BOM、成本資料與版本變化的整合，並進一步思考 AI 如何協助成本估算、分析與決策支援。</p>
+    <p class="en">My research explores the integration of engineering BOM, cost data, and version changes, and further examines how AI can support cost estimation, analysis, and decision-making.</p>
+  </div>
+</section>
+
+
+
+<section id="contact">
     <div class="section-label">CONTACT</div>
     <h2>Contact / Links</h2>
     <div class="two-col">
@@ -786,7 +820,6 @@ function setLang(l){
   $('langBtn').textContent = l==='en'?'中文':'EN';
   document.title = l==='en'?'Cynthia Lin | Engineering BOM × NPI Cost × AI':'林歆倫 Cynthia Lin｜工程 BOM × NPI 成本 × AI';
   save('lang', l);
-  if(document.getElementById('chatQuick')) renderQuick();
 }
 function toggleLang(){ setLang(document.body.classList.contains('lang-en')?'zh':'en'); }
 
@@ -826,29 +859,6 @@ async function findPhotos(){
   }
   return found;
 }
-const CHAT_Q = [
-  {zh:'你是誰？', en:'Who is Cynthia?'},
-  {zh:'你的研究在做什麼？', en:'What is your research about?'},
-  {zh:'為什麼對 BOM 有興趣？', en:'Why are you interested in BOM?'},
-  {zh:'什麼是 NPI？', en:'What is NPI?'},
-  {zh:'AI 如何支援成本管理？', en:'How can AI support cost management?'},
-  {zh:'你的研究目標是什麼？', en:'What is your research goal?'}
-];
-const CHAT_A = [
-  ['你是誰？','Who is Cynthia?','我是 Cynthia Lin（林歆倫），目前是長庚大學管理研究所博士生，具有十年以上大型企業工作經驗，研究關注工程 BOM、NPI、成本核算，以及 AI 應用於企業成本管理與決策支援。','I am Cynthia Lin, a Ph.D. student in the Graduate Institute of Management at Chang Gung University. I have more than ten years of large-enterprise experience and focus on engineering BOM, NPI, cost accounting, and AI applications in cost management and decision support.'],
-  ['你的研究在做什麼？','What is your research about?','我的研究構想是把工程 BOM、成本資料、版本變化與 AI 輔助整合起來，支援 NPI 階段的成本分析與決策。','My research concept integrates engineering BOM, cost data, version changes, and AI assistance to support cost analysis and decision-making during NPI.'],
-  ['為什麼對 BOM 有興趣？','Why are you interested in BOM?','BOM 是產品結構與成本分析的重要骨架。把主件、子件與單位用量整理清楚，才能進一步追蹤成本如何形成與變化。','BOM is a key structure for product and cost analysis. Clear parent-child relationships and quantities make it possible to trace how cost is formed and changes.'],
-  ['什麼是 NPI？','What is NPI?','NPI 是 New Product Introduction，新產品導入。這個階段需要及早掌握產品結構、成本與變更，才能支援後續決策。','NPI means New Product Introduction. It is the stage where product structure, cost, and changes need to be understood early to support decisions.'],
-  ['AI 如何支援成本管理？','How can AI support cost management?','AI 可以進一步支援早期成本估算、異常辨識、成本因素分析，以及管理者的決策支援；目前網站呈現的是研究方向，而不是公開完整計算引擎。','AI can further support early cost estimation, anomaly detection, cost-factor analysis, and decision support. This website presents the research direction rather than the full calculation engine.'],
-  ['你的研究目標是什麼？','What is your research goal?','希望從傳統成本核算進一步走向 AI 輔助的成本決策支援，讓 NPI 階段不只知道成本是多少，也能更早理解成本為什麼變化，以及可以如何做決策。','My goal is to move from traditional cost accounting toward AI-assisted cost decision support, so NPI teams can understand not only how much cost is, but also why it changes and how to respond.']
-];
-function chatText(zh,en){ return document.body.classList.contains('lang-en') ? en : zh; }
-function addChat(role,text){ const box=document.createElement('div'); box.className='chat-msg '+role; box.textContent=text; $('chatMessages').appendChild(box); $('chatMessages').scrollTop=$('chatMessages').scrollHeight; }
-function renderQuick(){ $('chatQuick').innerHTML=CHAT_Q.map((q,i)=>`<button type=\"button\" onclick=\"askChat(${i})\">${chatText(q.zh,q.en)}</button>`).join(''); }
-function askChat(i){ addChat('user',chatText(CHAT_A[i][0],CHAT_A[i][1])); setTimeout(()=>addChat('bot',chatText(CHAT_A[i][2],CHAT_A[i][3])),120); }
-function sendChat(){ const input=$('chatInput'); const raw=input.value.trim(); if(!raw) return; addChat('user',raw); input.value=''; const q=raw.toLowerCase(); let hit=-1; CHAT_A.forEach((a,i)=>{ if(a[0] && raw.includes(a[0])) hit=i; }); const keys=[['who','誰','cynthia'],['research','研究'],['bom','b o m'],['npi','npi'],['ai','人工智慧','ai'],['goal','目標','未來']]; if(hit<0){ for(let i=0;i<keys.length;i++){ if(keys[i].some(k=>q.includes(k.replaceAll(' ','')))){ hit=i; break; } } } setTimeout(()=>{ if(hit>=0) addChat('bot',chatText(CHAT_A[hit][2],CHAT_A[hit][3])); else addChat('bot',chatText('我是 Cynthia 的 Portfolio Assistant。目前我主要回答：Cynthia 的學經歷、研究方向、工程 BOM、NPI、成本管理與 AI 應用。','I am Cynthia’s Portfolio Assistant. I mainly answer questions about Cynthia’s background, research, engineering BOM, NPI, cost management, and AI applications.')); },120); }
-function initChat(){ renderQuick(); addChat('bot',chatText('你好！我是 Cynthia 的 AI Portfolio Assistant。你可以問我關於我的學經歷、研究、BOM、NPI、成本管理或 AI 應用。','Hi! I am Cynthia’s AI Portfolio Assistant. Ask me about my background, research, BOM, NPI, cost management, or AI applications.')); }
-
 function initPhotos(){
   findPhotos().then(ok => {
     if(!ok.length) return;
@@ -867,7 +877,90 @@ function initPhotos(){
 setTheme(load('theme') || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 setLang(load('lang') || 'zh');
 initPhotos();
-initChat();
+
+/* HW2 Ask Cynthia AI — portfolio-scoped rule-based assistant */
+const cynthiaQA = [
+  {keys:['你是誰','妳是誰','who are you','cynthia'], answer:{
+    zh:'我是 Cynthia 的 Portfolio Assistant，主要介紹她的學經歷、研究方向，以及工程 BOM、NPI、成本管理與 AI 應用。',
+    en:"I am Cynthia's Portfolio Assistant. I introduce her background, research interests, and work on engineering BOM, NPI, cost management, and AI applications."
+  }},
+  {keys:['研究在做什麼','研究做什麼','研究方向','research'], answer:{
+    zh:'Cynthia 的研究聚焦工程 BOM、NPI、成本核算，以及 AI 應用於企業成本管理與決策支援。研究希望把工程結構、成本資料與版本變化更有效地連結起來。',
+    en:"Cynthia's research focuses on engineering BOM, NPI, cost accounting, and applying AI to enterprise cost management and decision support. The goal is to better connect engineering structures, cost data, and version changes."
+  }},
+  {keys:['為什麼','bom 有興趣','bom','bill of materials'], answer:{
+    zh:'因為 BOM 是工程產品結構與成本分析的重要基礎。若 BOM 結構、價格與成本資訊能被有效整合，就能更容易支援 NPI 階段的成本分析與決策。',
+    en:'BOM is a key foundation for engineering product structure and cost analysis. Better integration of BOM structure, price, and cost information can support earlier NPI cost analysis and decisions.'
+  }},
+  {keys:['什麼是 npi','npi 是什麼','npi'], answer:{
+    zh:'NPI（New Product Introduction）是新產品導入，涵蓋從產品設計、工程準備到量產導入的過程。成本資訊在早期 NPI 階段就能影響產品與管理決策。',
+    en:'NPI (New Product Introduction) is the process of bringing a new product from design and engineering preparation into production. Cost information can influence product and management decisions early in NPI.'
+  }},
+  {keys:['ai 如何','ai 支援','成本管理','cost management','cost estimation'], answer:{
+    zh:'AI 可以協助歷史資料分析、早期成本估算、異常辨識，以及進一步提供決策支援。不過 Cynthia 目前的研究也強調：AI 是後續延伸，應建立在可追溯的成本基礎上。',
+    en:'AI can support historical-data analysis, early cost estimation, anomaly detection, and decision support. Cynthia’s research also emphasizes that AI should build on a traceable cost baseline.'
+  }},
+  {keys:['研究目標','研究想達成','目標'], answer:{
+    zh:'研究目標是從工程 BOM 與成本核算的可追溯基礎出發，進一步探索 AI 輔助成本估算與 NPI 決策支援。',
+    en:'The goal is to start from a traceable engineering BOM and cost-accounting foundation and then explore AI-assisted cost estimation and NPI decision support.'
+  }}
+];
+
+function cynthiaReply(q){
+  const text = q.trim().toLowerCase();
+  if(!text) return '請輸入一個問題，我會協助你了解 Cynthia 的學經歷、研究與 AI × BOM × NPI 主題。';
+
+  const privateTerms = ['幾歲','年齡','生日','出生','結婚','老公','先生','男朋友','女朋友','感情','家庭'];
+  if(privateTerms.some(k => text.includes(k))){
+    return '這屬於 Cynthia 的私人生活資訊，不在本 Portfolio 的公開介紹範圍內，因此我不提供這類資訊。你可以問我她的學經歷、研究方向、工程 BOM、NPI、成本管理或 AI 應用。';
+  }
+
+  for(const item of cynthiaQA){
+    if(item.keys.some(k => text.includes(k.toLowerCase()))){
+      return document.body.classList.contains('lang-en') ? item.answer.en : item.answer.zh;
+    }
+  }
+
+  return document.body.classList.contains('lang-en')
+    ? "I'm Cynthia's Portfolio Assistant. I can answer questions about her academic and professional background, research, engineering BOM, NPI, cost management, and AI applications. Please try one of these topics."
+    : '我是 Cynthia 的 Portfolio Assistant。目前可以回答：Cynthia 的學經歷、研究方向、工程 BOM、NPI、成本管理與 AI 應用。若問題與這些主題無關，我會建議你回到這些研究主題。';
+}
+
+function addChatMessage(text, who){
+  const box = $('chatBox');
+  const row = document.createElement('div');
+  row.className = 'chat-row ' + who;
+  const bubble = document.createElement('div');
+  bubble.className = 'chat-bubble';
+  bubble.textContent = text;
+  row.appendChild(bubble);
+  box.appendChild(row);
+  box.scrollTop = box.scrollHeight;
+}
+
+function askCynthia(question){
+  addChatMessage(question, 'user');
+  setTimeout(() => addChatMessage(cynthiaReply(question), 'bot'), 180);
+}
+
+function sendCynthia(){
+  const input = $('chatInput');
+  const q = input.value.trim();
+  if(!q) return;
+  input.value = '';
+  askCynthia(q);
+}
+
+function initCynthiaChat(){
+  addChatMessage(
+    document.body.classList.contains('lang-en')
+      ? "Hi! I'm Cynthia's Portfolio Assistant. Ask me about her background, research, BOM, NPI, cost management, or AI applications."
+      : '你好！我是 Cynthia 的 Portfolio Assistant。你可以問我她的學經歷、研究方向、工程 BOM、NPI、成本管理或 AI 應用。',
+    'bot'
+  );
+}
+
+initCynthiaChat();
 </script>
 
 </body>
